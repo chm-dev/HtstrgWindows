@@ -1,0 +1,44 @@
+<Window x:Class="HtstrgWindows.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HtstrgWindows"
+        mc:Ignorable="d"
+        Title="Hotstring Manager" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <ToolBarTray Grid.Row="0">
+            <ToolBar>
+                <Button Name="BtnAdd" Click="BtnAdd_Click" Content="Add Hotstring" />
+                <Button Name="BtnRemove" Click="BtnRemove_Click" Content="Remove Selected" />
+                <Separator/>
+                <CheckBox Name="ChkPaused" Checked="ChkPaused_CheckedChanged" Unchecked="ChkPaused_CheckedChanged" Content="Pause"/>
+            </ToolBar>
+        </ToolBarTray>
+
+        <DataGrid Grid.Row="1" Name="GridHotstrings" AutoGenerateColumns="False" CanUserAddRows="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Trigger" Binding="{Binding Trigger}" Width="150"/>
+                <DataGridTextColumn Header="Replacement" Binding="{Binding Replacement}" Width="*"/>
+                <DataGridCheckBoxColumn Header="Case Sensitive" Binding="{Binding CaseSensitive}" Width="100"/>
+                <DataGridCheckBoxColumn Header="Immediate (*)" Binding="{Binding ExpandImmediately}" Width="100"/>
+                <DataGridCheckBoxColumn Header="Omit End Char (O)" Binding="{Binding OmitEndChar}" Width="100"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+<StatusBar Grid.Row="2">
+            <StatusBarItem> 
+                <TextBlock Name="TxtStatus" Text="Ready"/>
+            </StatusBarItem>
+            <StatusBarItem>
+                <TextBlock Text="chmielciu@gmail.com"/>
+            </StatusBarItem>
+        </StatusBar>
+    </Grid>
+</Window>
