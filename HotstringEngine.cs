@@ -48,10 +48,13 @@ namespace HtstrgWindows
             set { _omitEndChar = value; OnPropertyChanged(); } 
         }
 
-        public event PropertyChangedEventHandler PropertyChanged;
-        protected void OnPropertyChanged([CallerMemberName] string name = null)
+public event PropertyChangedEventHandler? PropertyChanged;
+        protected void OnPropertyChanged([CallerMemberName] string? name = null!)
         {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
+            if (PropertyChanged != null)
+            {
+                PropertyChanged.Invoke(this, new PropertyChangedEventArgs(name!));
+            }
         }
     }
 
@@ -87,13 +90,13 @@ namespace HtstrgWindows
             Hotstrings.Clear();
         }
 
-        private IntPtr SetHook(NativeMethods.LowLevelKeyboardProc proc)
+private IntPtr SetHook(NativeMethods.LowLevelKeyboardProc proc)
         {
             using (Process curProcess = Process.GetCurrentProcess())
-            using (ProcessModule curModule = curProcess.MainModule)
+            using (ProcessModule? curModule = curProcess.MainModule)
             {
                 return NativeMethods.SetWindowsHookEx(NativeMethods.WH_KEYBOARD_LL, proc,
-                    NativeMethods.GetModuleHandle(curModule.ModuleName), 0);
+                    NativeMethods.GetModuleHandle(curModule?.ModuleName ?? string.Empty), 0);
             }
         }
 

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Windows;
@@ -25,7 +25,7 @@ namespace HtstrgWindows
             this.Closing += MainWindow_Closing;
         }
 
-        private void MainWindow_Closing(object sender, CancelEventArgs e)
+private void MainWindow_Closing(object? sender, CancelEventArgs e)
         {
             _engine.Dispose();
         }

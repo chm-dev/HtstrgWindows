@@ -12,6 +12,7 @@
           "name": "unsloth/glm-4.7-flash",
           "reasoning": true,
           "tool_call": true
+          
         }
       }
     }
