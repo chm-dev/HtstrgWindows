@@ -37,7 +37,7 @@
                 <TextBlock Name="TxtStatus" Text="Ready"/>
             </StatusBarItem>
             <StatusBarItem>
-                <TextBlock Text="chmielciu@gmail.com"/>
+        
             </StatusBarItem>
         </StatusBar>
     </Grid>
