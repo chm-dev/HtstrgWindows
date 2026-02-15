@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("HtstrgWindows")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7286e67a4f73cc93d028db05fd380d7808070b94")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8a8e801de26506ddc8b3a9706382373617c7eb9d")]
 [assembly: System.Reflection.AssemblyProductAttribute("HtstrgWindows")]
 [assembly: System.Reflection.AssemblyTitleAttribute("HtstrgWindows")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
